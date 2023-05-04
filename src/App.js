@@ -9,6 +9,18 @@ function saveData()
   let data={name,email,mobile}
 console.warn(data);
 // console.warn(name,email,mobile);
+fetch("https://jsonplaceholder.typicode.com/users",{
+  method:"POST",
+  headers:{
+    "Accept":"application/json",
+    "Content-Type":"application/json",
+  },
+  body:JSON.stringify(data)
+}).then((resp)=>{
+  resp.json().then((result)=>{
+ console.log("result is",result)   
+  })
+})
 
 }
     
